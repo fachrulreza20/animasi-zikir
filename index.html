@@ -33,7 +33,7 @@
     }
     
     .counter {
-      font-size: 24px;
+      font-size: 40px;
       margin-bottom: 10px;
     }
     
@@ -41,19 +41,11 @@
       position: relative;
       display: inline-block;
     }
-    
-    .image {
-      width: 400px;
-      height: 150px;
-    }
-    
+        
     .button-container {
       margin-top: 10px;
     }
     
-    .button {
-      margin-right: 10px;
-    }
 
   </style>
 </head>
@@ -65,11 +57,11 @@
     <div id="div1" class="content active">
       <div class="image-container">
         <img src="subhanallah.png" alt="Image" class="image" id="image-zikir">
-        <div id="counter" class="counter">Counter: 0</div>
+        <div id="counter" class="counter">0</div>
       </div>
       <div class="button-container">
-        <button id="autox" class="btn btn-primary button">Zikir Otomatis</button>
-        <button id="tambahx" class="btn btn-primary button">Hitung Manual +1</button>
+        <button id="autox" class="btn btn-secondary button">Zikir Otomatis</button><br><br>
+        <button id="tambahx" class="btn btn-primary button">Hitung Manual +1</button><br><br>
         <button id="reset" class="btn btn-danger button">Reset</button>
       </div>
     </div>
@@ -180,7 +172,7 @@
         clearInterval(intervalId);
         intervalId = setInterval(function() {
           blinkImage();
-          if (counterValue >= 99) {
+          if (counterValue >= 33) {
             clearInterval(intervalId);
           }
         }, 1000);
