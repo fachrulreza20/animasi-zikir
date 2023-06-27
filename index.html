@@ -156,6 +156,7 @@
         // $("#" + targetDivId).addClass("active");
         
         $("#image-zikir").attr('src',targetDivId+'.png')     
+        $("#counter").text(0);
 
 
       });
@@ -165,7 +166,7 @@
       function blinkImage() {
         $(".image").fadeOut(200).fadeIn(200);
         counterValue++;
-        $("#counter").text("Counter: " + counterValue);
+        $("#counter").text("" + counterValue);
       }
 
       $("#autox").click(function() {
@@ -189,7 +190,7 @@
 
       $("#reset").click(function() {
           counterValue = 0;
-          $("#counter").text("Counter: " + counterValue);
+          $("#counter").text("" + counterValue);
           clearInterval(intervalId);
           autox_status = false;
       });
