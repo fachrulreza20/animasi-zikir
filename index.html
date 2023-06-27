@@ -66,9 +66,28 @@
       </div>
     </div>
     
-    <div id="div2" class="content">
-      <h2>Div 2</h2>
-      <p>This is div 2.</p>
+    <div id="submenu" class="content">
+        <div class="card  ">
+          <div class="card-header">Donasi ke saya agar saya lebih semangat dalam berkarya. Terima kasih.</div>
+          <div class="card-body">
+            <h5 class="card-title">Fachrul Reza</h5>
+            <p class="card-text">
+    <pre>
+    Whatsapp / OVO / Gopay / Shopee Pay : 085262553168
+    Rekening Bank:
+    Bank BSI = 7057-8366-73
+    Bank Mandiri = 10600-210391-88
+    Bank Permata = 0099-1708-0299
+    Bank Jago = 10895-666-5797
+    rekening atas nama fahrul reza
+    </pre>
+    <br>
+    <a href="https://www.linkedin.com/in/fareza/" target="_blank" class="btn btn-primary"> Linkedin Saya : Fachrul Reza </a><br>
+    <br>
+    <a href="http://github.com/fachrulreza20" target="_blank" class="btn btn-primary">Github Saya : Fachrul Reza</a>
+            </p>
+          </div>
+        </div>
     </div>
     
     <div id="div3" class="content">
@@ -111,7 +130,7 @@
             </li>
             </li>
             <li class="nav-item dropup">
-                <a href="#" class="nav-link text-center" role="button" id="dropdownMenuProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a href="#submenu" class="nav-link text-center" role="button" id="dropdownMenuProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -121,10 +140,7 @@
                 </a>
                 <!-- Dropup menu for profile -->
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuProfile">
-                    <a class="dropdown-item" href="#">Edit Profile</a>
-                    <a class="dropdown-item" href="#">Notification</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="#submenu">Owner</a>
                 </div>
             </li>
 
@@ -152,13 +168,17 @@
         $(this).addClass("active");
         
         var targetDivId = $(this).attr("href").substring(1);
-        // $(".content").removeClass("active");
-        // $("#" + targetDivId).addClass("active");
         
-        $("#image-zikir").attr('src',targetDivId+'.png')     
-        $("#counter").text(0);
-
-
+        if(targetDivId=="submenu"){
+            $(".content").removeClass("active");
+            $("#" + targetDivId).addClass("active");
+        }
+        else{
+            $(".content").removeClass("active");
+            $("#div1").addClass("active");
+            $("#image-zikir").attr('src',targetDivId+'.png')     
+            $("#counter").text(0);
+        }
       });
 
 
