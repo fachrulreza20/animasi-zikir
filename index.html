@@ -16,9 +16,10 @@
     
     .container {
       height: 100vh;
+      align-items: center;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
     }
     
     .content {
@@ -47,32 +48,19 @@
     }
         
     #tambahx{
-          background:black;
-          display: block;
-          width: 50px;
-          height: 50px;
-          line-height: 50px;
-          text-align: center;
-          color: white;
           font-size: 30px;
           font-weight: bold;
-          border-radius: 50%;
-          -webkit-border-radius: 50%;
-          text-decoration: none;
-          transition: ease all 0.3s;
           position: fixed;
           right: 30px;
-          bottom:70px;
+          bottom:100px;
         }
-    #tambahx:hover{background: blue}
+    #tambahx:hover{background: orange}
 
   </style>
 </head>
 <body>
 
 <div class="container">
-
-
     <div id="div1" class="content active">
       <div class="image-container">
         <img src="subhanallah.png" alt="Image" class="image" id="image-zikir">
@@ -80,26 +68,23 @@
       </div>
       <div class="button-container">
         <button id="autox" class="btn btn-secondary button">Zikir Otomatis</button><br><br>
-        <button id="tambahx">+1</button>
+        <button id="tambahx" class="btn btn-primary button">+1</button>
         <button id="reset" class="btn btn-danger button">Reset</button>
       </div>
     </div>
-    
     <div id="submenu" class="content">
         <div class="card  ">
           <div class="card-header">Profile</div>
           <div class="card-body">
             <h5 class="card-title">Fachrul Reza</h5>
             <p class="card-text">
-
-    <br>
-    <a href="https://www.linkedin.com/in/fareza/" target="_blank" class="btn btn-primary"> Linkedin  : Fachrul Reza </a><br>
-    <br>
-    <a href="http://github.com/fachrulreza20" target="_blank" class="btn btn-primary">Github  : Fachrul Reza</a>
-    <br>
-    <br>
-    <a href="http://wa.me/85262553168" target="_blank" class="btn btn-primary">Whatsapp : https://wa.me/85262553168</a>
-
+            <br>
+            <a href="https://www.linkedin.com/in/fareza/" target="_blank" class="btn btn-primary"> Linkedin  : Fachrul Reza </a><br>
+            <br>
+            <a href="http://github.com/fachrulreza20" target="_blank" class="btn btn-primary">Github  : Fachrul Reza</a>
+            <br>
+            <br>
+            <a href="http://wa.me/85262553168" target="_blank" class="btn btn-primary">Whatsapp : https://wa.me/85262553168</a>
             </p>
           </div>
         </div>
@@ -189,6 +174,8 @@
             $("#" + targetDivId).addClass("active");
         }
         else{
+            counterValue = 0; 
+            clearInterval(intervalId);
             $(".content").removeClass("active");
             $("#div1").addClass("active");
             $("#image-zikir").attr('src',targetDivId+'.png')     
@@ -217,7 +204,6 @@
 
       $("#tambahx").click(function() {
         if(autox_status==true){
-          counterValue = 0;
           clearInterval(intervalId);            
         }
         blinkImage();
